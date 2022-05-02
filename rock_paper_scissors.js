@@ -60,10 +60,40 @@ function playRound(playerChoice, computerChoice) {
     return result;
 }
 
-let playerChoice = playerPlay();
+/*Plays a five round game of Rock Paper Scissors and keeps track of the winner*/
+function game(playerScore=0, computerScore=0) {
 
-let computerChoice = computerPlay();
+    for (let i = 0; i < 5; i++) {
 
-console.log("The computer picked " + computerChoice);
+        let playerChoice = playerPlay();
 
-console.log(playRound(playerChoice, computerChoice));
+        let computerChoice = computerPlay();
+
+        console.log("The computer picked " + computerChoice);
+
+        console.log(playRound(playerChoice, computerChoice));
+
+        if(result.includes("You win") == true) {
+            playerScore++;
+        } else if(result.includes("You lose") == true) {
+            computerScore++;
+        } else {
+            continue;
+        }
+
+        console.log("Player score = " + playerScore);
+        console.log("Computer score = " + computerScore);
+
+        if(i == 4){
+            if(playerScore > computerScore) {
+                console.log("You won!");
+            } else if(playerScore < computerScore) {
+                console.log("You lost:(");
+            } else {
+                console.log("It's a tie!");
+            }
+        }
+    }
+}
+
+console.log(game());
