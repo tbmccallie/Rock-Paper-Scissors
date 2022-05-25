@@ -1,5 +1,5 @@
 /*Create array that the computerPlay function will randomly choose a value from*/
-let computerChoices = [
+const computerChoices = [
     "rock",
     "paper",
     "scissors"
